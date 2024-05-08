@@ -46,15 +46,15 @@ cd property-booking-system
 ```
 
 
-```markdown
+
 ## Running the Application with Docker
 
 You can run the Property Booking System application using Docker, which allows for easy deployment and management of containerized applications.
 
 ### Steps to Run the Application with Docker
-```
 
-1. **Build the Docker Image:**
+
+## Build the Docker Image:
 
 ```bash
 docker build -t airbnb-property-booking .
@@ -62,7 +62,7 @@ docker build -t airbnb-property-booking .
 
 This command builds a Docker image for the Property Booking System application.
 
-2. **Run the Docker Container:**
+## Run the Docker Container:
 
 ```bash
 docker run -p 8080:8080 airbnb-property-booking
