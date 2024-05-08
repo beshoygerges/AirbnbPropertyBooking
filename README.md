@@ -45,6 +45,39 @@ cd property-booking-system
 ./mvnw spring-boot:run
 ```
 
+
+```markdown
+## Running the Application with Docker
+
+You can run the Property Booking System application using Docker, which allows for easy deployment and management of containerized applications.
+
+### Steps to Run the Application with Docker
+```
+
+1. **Build the Docker Image:**
+
+```bash
+docker build -t airbnb-property-booking .
+```
+
+This command builds a Docker image for the Property Booking System application.
+
+2. **Run the Docker Container:**
+
+```bash
+docker run -p 8080:8080 airbnb-property-booking
+```
+
+This command runs the Docker container based on the previously built image, and it maps port 8080 of the container to port 8080 on the host machine.
+
+Once the Docker container is running, you can access the application by navigating to `http://localhost:8080` in your web browser.
+
+### Note:
+
+- Make sure Docker is installed on your machine before running these commands.
+- Ensure that no other process is using port 8080 on your host machine to avoid conflicts.
+```
+
 ## Accessing the API
 
 ### 1- Postman Collection
