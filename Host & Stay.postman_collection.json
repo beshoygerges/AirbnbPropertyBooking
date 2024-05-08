@@ -1,0 +1,59 @@
+{
+	"info": {
+		"_postman_id": "afb9b880-bbed-4a34-9a5a-98667f1a0eb4",
+		"name": "Host & Stay",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1829530"
+	},
+	"item": [
+		{
+			"name": "Create Booking",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"propertyId\": \"e1c40b79-97cb-48e7-a03b-7f07725b0e87\",\n    \"userId\": \"8cfa68a3-34cf-4da5-aa2f-88c49c31a688\",\n    \"paymentMethodId\": \"8cfa68a3-34cf-4da5-aa2f-88c49c31a681\",\n    \"amount\": 200,\n    \"checkInDate\": \"2024-05-19\",\n    \"checkOutDate\": \"2024-05-20\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/bookings",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Bookings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/bookings",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
