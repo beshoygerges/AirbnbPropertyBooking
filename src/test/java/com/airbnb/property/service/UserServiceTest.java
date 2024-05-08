@@ -1,7 +1,7 @@
 package com.airbnb.property.service;
 
-import com.airbnb.property.model.Property;
-import com.airbnb.property.repository.PropertyRepository;
+import com.airbnb.property.model.User;
+import com.airbnb.property.repository.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -18,46 +18,45 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class PropertyServiceTest {
+class UserServiceTest {
 
     @Mock
-    private PropertyRepository propertyRepository;
+    private UserRepository userRepository;
 
     @InjectMocks
-    private PropertyService propertyService;
+    private UserService userService;
 
 
     @Test
-    void getProperty_ValidPropertyId_ReturnsProperty() {
+    void getUser_ValidUserId_Returns() {
         // Arrange
-        UUID propertyId = UUID.randomUUID();
-        Property expectedProperty = createProperty(propertyId);
-        when(propertyRepository.findByUuid(propertyId)).thenReturn(Optional.of(expectedProperty));
+        UUID userId = UUID.randomUUID();
+        User expectedUser = createUser(userId);
+        when(userRepository.findByUuid(userId)).thenReturn(Optional.of(expectedUser));
 
         // Act
-        Property result = propertyService.getProperty(propertyId);
+        User result = userService.getUser(userId);
 
         // Assert
-        assertEquals(expectedProperty, result);
-        verify(propertyRepository).findByUuid(propertyId);
+        assertEquals(expectedUser, result);
+        verify(userRepository).findByUuid(userId);
     }
 
     @Test
-    void getProperty_InvalidPropertyId_ThrowsException() {
+    void getUser_InvalidUserId_ThrowsException() {
         // Arrange
-        UUID propertyId = UUID.randomUUID();
-        when(propertyRepository.findByUuid(propertyId)).thenReturn(Optional.empty());
+        UUID userId = UUID.randomUUID();
+        when(userRepository.findByUuid(userId)).thenReturn(Optional.empty());
 
         // Act & Assert
-        assertThrows(EntityNotFoundException.class, () -> propertyService.getProperty(propertyId));
-        verify(propertyRepository).findByUuid(propertyId);
+        assertThrows(EntityNotFoundException.class, () -> userService.getUser(userId));
+        verify(userRepository).findByUuid(userId);
     }
 
     // Helper method to create a Property object for testing
-    private Property createProperty(UUID propertyId) {
-        Property property = new Property();
-        property.setUuid(propertyId);
-        // Set other properties as needed
-        return property;
+    private User createUser(UUID userId) {
+        User user = new User();
+        user.setUuid(userId);
+        return user;
     }
 }

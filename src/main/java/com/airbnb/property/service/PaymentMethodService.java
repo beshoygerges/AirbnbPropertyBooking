@@ -1,7 +1,7 @@
 package com.airbnb.property.service;
 
-import com.airbnb.property.model.Property;
-import com.airbnb.property.repository.PropertyRepository;
+import com.airbnb.property.model.PaymentMethod;
+import com.airbnb.property.repository.PaymentMethodRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -10,12 +10,12 @@ import java.util.UUID;
 
 @RequiredArgsConstructor
 @Service
-public class PropertyService {
+public class PaymentMethodService {
 
-    private final PropertyRepository propertyRepository;
+    private final PaymentMethodRepository paymentMethodRepository;
 
-    public Property getProperty(UUID propertyId) {
-        return propertyRepository.findByUuid(propertyId)
-                .orElseThrow(() -> new EntityNotFoundException("Property not found with ID: " + propertyId));
+    public PaymentMethod getPaymentMethod(UUID paymentMethodId, Long userId) {
+        return paymentMethodRepository.findByUuidAndUserId(paymentMethodId, userId)
+                .orElseThrow(() -> new EntityNotFoundException("Payment Method not found with ID: " + paymentMethodId));
     }
 }

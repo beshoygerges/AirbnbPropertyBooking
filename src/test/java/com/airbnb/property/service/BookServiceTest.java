@@ -9,9 +9,6 @@ import com.airbnb.property.model.PaymentMethod;
 import com.airbnb.property.model.Property;
 import com.airbnb.property.model.User;
 import com.airbnb.property.repository.BookingRepository;
-import com.airbnb.property.repository.PaymentMethodRepository;
-import com.airbnb.property.repository.PropertyRepository;
-import com.airbnb.property.repository.UserRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -31,7 +28,7 @@ import static org.mockito.AdditionalAnswers.returnsFirstArg;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-public class BookServiceTest {
+class BookServiceTest {
 
     @Mock
     private BookingRepository bookingRepository;

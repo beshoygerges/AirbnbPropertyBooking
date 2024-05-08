@@ -18,7 +18,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class PropertyServiceTest {
+class PropertyServiceTest {
 
     @Mock
     private PropertyRepository propertyRepository;
@@ -57,7 +57,6 @@ public class PropertyServiceTest {
     private Property createProperty(UUID propertyId) {
         Property property = new Property();
         property.setUuid(propertyId);
-        // Set other properties as needed
         return property;
     }
 }

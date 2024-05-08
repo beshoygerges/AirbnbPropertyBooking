@@ -1,7 +1,7 @@
 package com.airbnb.property.service;
 
-import com.airbnb.property.model.User;
-import com.airbnb.property.repository.UserRepository;
+import com.airbnb.property.model.Property;
+import com.airbnb.property.repository.PropertyRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -10,12 +10,12 @@ import java.util.UUID;
 
 @RequiredArgsConstructor
 @Service
-public class UserService {
+public class PropertyService {
 
-    private final UserRepository userRepository;
+    private final PropertyRepository propertyRepository;
 
-    public User getUser(UUID userId) {
-        return userRepository.findByUuid(userId)
-                .orElseThrow(() -> new EntityNotFoundException("User not found with ID: " + userId));
+    public Property getProperty(UUID propertyId) {
+        return propertyRepository.findByUuid(propertyId)
+                .orElseThrow(() -> new EntityNotFoundException("Property not found with ID: " + propertyId));
     }
 }

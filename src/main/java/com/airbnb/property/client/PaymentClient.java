@@ -6,9 +6,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@FeignClient(name = "payment-service", url = "http://localhost:8081") // Replace with the actual URL of the mock payment service
+@FeignClient(name = "payment-service", url = "${payment.service.url}")
 public interface PaymentClient {
 
-    @PostMapping("/processPayment")
+    @PostMapping
     ResponseEntity<PaymentDTO> processPayment(@RequestBody PaymentDTO paymentDTO);
 }
