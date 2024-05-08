@@ -11,6 +11,20 @@ This guide will walk you through the steps to set up and run the Property Bookin
 - Git
 ```
 
+## Used Technologies
+
+The Property Booking System is built using the following technologies:
+
+- **Java**: The primary programming language used for developing the application.
+- **Spring Boot**: A popular Java framework used to create stand-alone, production-grade Spring-based applications.
+- **H2 Database**: An in-memory SQL database used for storing data during development and testing.
+- **Flyway**: A database migration tool used to manage database schema changes and versioning.
+- **JUnit**: A unit testing framework for Java used to write and run tests for the application.
+- **Mockito**: A mocking framework for Java used to create and configure mock objects in unit tests.
+
+These technologies work together to create a robust and scalable property booking system.
+
+
 ## Clone the Repository
 
 ```bash
@@ -48,8 +62,6 @@ Alternatively, you can access the API documentation using Swagger UI:
 
 You can use either Postman or Swagger to interact with the API endpoints, make requests, and test the functionality of the application.
 
-To use the API endpoints, you'll need UUIDs for users, properties, and payment methods. Here are some example UUIDs:
-
 ## Accessing H2 Database Console
 
 The Property Booking System uses an H2 in-memory database for storing data. You can access the H2 database console to view the full data.
@@ -67,6 +79,7 @@ The Property Booking System uses an H2 in-memory database for storing data. You 
 
 Once connected, you can browse the tables, execute SQL queries, and view the full data stored in the database.
 
+To use the API endpoints, you'll need UUIDs for users, properties, and payment methods. Here are some example UUIDs:
 
 ### Users
 
