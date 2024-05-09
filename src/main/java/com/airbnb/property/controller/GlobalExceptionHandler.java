@@ -45,7 +45,7 @@ public class GlobalExceptionHandler {
     public ResponseDTO<Void> handleValidationExceptions(MethodArgumentNotValidException ex) {
         Map<String, String> errors = new HashMap<>();
         String message = messageSource.getMessage("error.message.request.error", null, LocaleContextHolder.getLocale());
-        ex.getBindingResult().getAllErrors().forEach((error) -> {
+        ex.getBindingResult().getAllErrors().forEach(error -> {
             String fieldName = ((FieldError) error).getField();
             String errorMessage = error.getDefaultMessage();
             errors.put(fieldName, errorMessage);

@@ -17,7 +17,7 @@ public abstract class BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(columnDefinition = "uuid", nullable = false, updatable = false)
+    @Column(columnDefinition = "uuid", nullable = false, updatable = false, unique = true)
     private UUID uuid = UUID.randomUUID();
 
     @CreationTimestamp

@@ -1,9 +1,7 @@
 package com.airbnb.property.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import com.airbnb.property.config.AttributeEncryptor;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,12 +9,18 @@ import lombok.Setter;
 @Setter
 @Entity
 public class PaymentMethod extends BaseEntity {
+    @Convert(converter = AttributeEncryptor.class)
     @Column(nullable = false)
     private String cardNumber;
+
+    @Convert(converter = AttributeEncryptor.class)
     @Column(nullable = false)
     private String cvc;
+
+    @Convert(converter = AttributeEncryptor.class)
     @Column(nullable = false)
     private String expiryDate;
+
     @Column(nullable = false)
     private String last4;
     @ManyToOne

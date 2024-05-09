@@ -14,8 +14,6 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 
-import static java.util.stream.Collectors.toList;
-
 @RequiredArgsConstructor
 @Service
 public class BookingService {
@@ -90,6 +88,6 @@ public class BookingService {
     }
 
     public List<BookingDTO> getAllBookings() {
-        return bookingRepository.findAll().stream().map(bookingMapper::toDto).collect(toList());
+        return bookingRepository.findAll().stream().map(bookingMapper::toDto).toList();
     }
 }
