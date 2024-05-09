@@ -1,5 +1,6 @@
 
-```markdown
+
+
 # Property Booking System
 
 This guide will walk you through the steps to set up and run the Property Booking System application.
@@ -9,7 +10,6 @@ This guide will walk you through the steps to set up and run the Property Bookin
 - JDK (Java Development Kit) 17
 - Maven
 - Git
-```
 
 ## Used Technologies
 
@@ -24,14 +24,12 @@ The Property Booking System is built using the following technologies:
 
 These technologies work together to create a robust and scalable property booking system.
 
-
 ## Clone the Repository
 
 ```bash
 git clone https://github.com/beshoygerges/AirbnbPropertyBooking.git
 cd property-booking-system
 ```
-
 
 ## Build the Code
 
@@ -45,16 +43,13 @@ cd property-booking-system
 ./mvnw spring-boot:run
 ```
 
-
-
 ## Running the Application with Docker
 
 You can run the Property Booking System application using Docker, which allows for easy deployment and management of containerized applications.
 
 ### Steps to Run the Application with Docker
 
-
-## Build the Docker Image:
+#### Build the Docker Image:
 
 ```bash
 docker build -t airbnb-property-booking .
@@ -62,7 +57,7 @@ docker build -t airbnb-property-booking .
 
 This command builds a Docker image for the Property Booking System application.
 
-## Run the Docker Container:
+#### Run the Docker Container:
 
 ```bash
 docker run -p 8080:8080 airbnb-property-booking
@@ -72,11 +67,10 @@ This command runs the Docker container based on the previously built image, and 
 
 Once the Docker container is running, you can access the application by navigating to `http://localhost:8080` in your web browser.
 
-### Note:
+**Note:**
 
 - Make sure Docker is installed on your machine before running these commands.
 - Ensure that no other process is using port 8080 on your host machine to avoid conflicts.
-```
 
 ## Accessing the API
 
@@ -84,7 +78,7 @@ Once the Docker container is running, you can access the application by navigati
 
 You can import the provided Postman collection file to test the APIs:
 
-#### Host & Stay.postman_collection.json
+[Host & Stay.postman_collection.json](#)
 
 ### 2- Swagger
 
